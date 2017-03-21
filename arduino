@@ -1,13 +1,50 @@
+int  pinVermelho   = 10;
+int  pinVerde      = 9;
+int  pinAmarelo    = 8;
+int  pinBotao      = 7;
+
+int faseSemaforo;
+
+
 void setup(){
 
-pinMode(10, OUTPUT);
+pinMode(pinVerde, OUTPUT);
+pinMode(pinAmarelo, OUTPUT);
+pinMode(pinVermelho, OUTPUT);
+pinMode(pinBotao, INPUT);
+
+	faseSemaforo = 1;
 }
 
 
 void loop(){
+	estadoBotao = digitalRead(pinBotao);
+		
+		if(estadoBotao == HIGH){
+			if(faseSemaforo < 3){
+			   faseSemaforo++;
+		} else{
+			faseSemaforo = 1;	
+}
 
-digitalWrite(10, HIGH);
-delay(1000);
-digitalWrite(10, LOW);
-delay(1000);
+
+}
+		if (faseSemaforo == 1){
+		digitalWrite(pinVerde = HIGH);
+		digitalWrite(pinAmarelo = LOW);
+		digitalWrite(pinVermeho = LOW);
+
+}
+		if (faseSemaforo == 2){
+		digitalWrite(pinVerde = LOW);
+		digitalWrite(pinAmarelo = HIGH);
+		digitalWrite(pinVermeho = LOW);
+
+}
+		if (faseSemaforo == 3){
+		digitalWrite(pinVerde = LOW);
+		digitalWrite(pinAmarelo = LOW);
+		digitalWrite(pinVermeho = HIGH);
+
+}
 }
