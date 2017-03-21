@@ -1,17 +1,22 @@
+// Exemplo prático de programação com arduino
+// Kevin Andrade Ferreira
+
+// declaração das variaveis dos leds e botão em suas respectivas portas
 int  pinVermelho   = 10;
 int  pinVerde      = 9;
 int  pinAmarelo    = 8;
 int  pinBotao      = 7;
 
+//Variável que vai armazenar qual led estará "HIGH"
 int faseSemaforo;
 
 
 void setup(){
 
-pinMode(pinVerde, OUTPUT);
-pinMode(pinAmarelo, OUTPUT);
-pinMode(pinVermelho, OUTPUT);
-pinMode(pinBotao, INPUT);
+	pinMode(pinVerde, OUTPUT);
+	pinMode(pinAmarelo, OUTPUT);
+	pinMode(pinVermelho, OUTPUT);
+	pinMode(pinBotao, INPUT);
 
 	faseSemaforo = 1;
 }
